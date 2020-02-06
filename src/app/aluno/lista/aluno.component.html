@@ -1,0 +1,51 @@
+<h5>Cadastro de Alunos</h5>
+<br>
+
+<div class="col-4">
+  <div class="form-inline float-left">
+    <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="novo()">Novo aluno</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-12">
+  <div class="form-inline float-right">
+    <div class="form-group mb-2">
+      <input id="search" #search type="text" class="form-control" [(ngModel)]="filtro" placeholder="Filtro" />
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">Celular</th>
+      <th scope="col" class="center">Sttus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="col" colspan="6" class="center red">{{messages}}</td>
+    </tr>
+    <tr *ngFor="let aluno of alunos | search: filtro">
+      <td>{{ aluno.id }} </td>
+      <td>
+        <a href="/aluno/{{aluno.id}}">
+          {{aluno.nome}}
+        </a>
+      </td>
+      <td>{{ aluno.cpf }}</td>
+      <td>{{ aluno.email }}</td>
+      <td>{{ aluno.celular }}</td>
+      <td [ngClass]="{'red' : aluno.status==0, 'green' : aluno.status==1} " class="center">
+        {{ aluno.status == 1 ? "Ativo" : "Inativo"}}
+      </td>
+    </tr>
+  </tbody>
+</table>
