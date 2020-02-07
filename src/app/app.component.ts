@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  public isCollapsedComponents = true;
+  public isCollapsedUtilities = true;
+  public isCollapsedPages = true;
+  public isCollapsedCharts = true;
+  public isMenuCollapsed = true;
 }

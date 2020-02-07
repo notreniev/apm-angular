@@ -35,7 +35,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     HttpClientModule,
     FormsModule,
     NgbModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
