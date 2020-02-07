@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 .jumbotron {
   margin-top: 1%;
   margin-bottom: 0% !important;
@@ -121,11 +122,20 @@ input {
   width: 100%;
 }
 
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+
 @media (min-width: 768px) {
 
   .sidebar:not(.show) {
     display: block;
-    width: 8rem !important;
+    width: 7rem !important;
+    text-align: center;
   }
 
   .sidebar:not(.show) .sidebar-brand-text {
@@ -133,17 +143,35 @@ input {
   }
 
   .sidebar:not(.show) .nav-item .nav-link {
-    text-align: center !important;
-    padding: .75rem 1rem !important;
     width: 6.5rem !important;
-  }
-
-  .sidebar:not(.show) .nav-link .sidebar-heading {
     text-align: center !important;
   }
 
-  /* .sidebar .nav-item .nav-link[data-toggle="show"].show::after {
-    content: '\f105' !important;
-  } */
+  .sidebar:not(.show) .nav-item .nav-link span {
+    font-size: .65rem !important;
+    display: block !important;
+  }
+
+  .sidebar:not(.show) a.nav-link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sidebar:not(.show) .sidebar-heading {
+    text-align: center;
+  }
+
+  .sidebar:not(.show) .nav-item .collapse {
+    position: absolute;
+    left: calc(6.5rem + 1.5rem / 2);
+    z-index: 1;
+    top: 2px;
+    -webkit-animation-name: growIn;
+    animation-name: growIn;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-timing-function: transform cubic-bezier(.18, 1.25, .4, 1), opacity cubic-bezier(0, 1, .4, 1);
+    animation-timing-function: transform cubic-bezier(.18, 1.25, .4, 1), opacity cubic-bezier(0, 1, .4, 1);
+  }
 
 }

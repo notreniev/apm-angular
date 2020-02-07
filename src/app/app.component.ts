@@ -12,4 +12,5 @@ export class AppComponent {
   public isCollapsedPages = true;
   public isCollapsedCharts = true;
   public isMenuCollapsed = true;
+
 }
