@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AlunoComponent implements OnInit {
 
-  @ViewChild('search', { static: false }) mySearch: ElementRef
+  @ViewChild('search') mySearch: ElementRef
   alunos = [{}]
   filtro: string = undefined
   messages

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CursoComponent implements OnInit {
 
-  @ViewChild('search', { static: false }) mySearch: ElementRef
+  @ViewChild('search') mySearch: ElementRef
   cursos = [{}]
   filtro: string = undefined
   messages

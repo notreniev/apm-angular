@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class InstituicaoComponent implements OnInit {
 
-  @ViewChild('search', { static: false }) mySearch: ElementRef
+  @ViewChild('search') mySearch: ElementRef
   instituicoes = [{}]
   filtro: string = undefined
   messages
