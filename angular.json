@@ -25,10 +25,10 @@
             ],
             "styles": [
               "src/css/fontawesome-free/css/all.min.css",
-              "src/css/sb-admin-2.min.css",
               {
                 "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
               },
+              "src/css/sb-admin-2.min.css",
               "src/css/styles.css"
             ],
             "scripts": []

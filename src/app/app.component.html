@@ -32,7 +32,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" (click)="isCollapsedComponents = !isCollapsedComponents" [attr.aria-expanded]="!isCollapsedComponents" aria-controls="collapseComponents">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseComponents" aria-expanded="!isCollapsedComponents" aria-controls="collapseComponents" (click)="isCollapsedComponents = !isCollapsedComponents" [attr.aria-expanded]="!isCollapsedComponents" #collapseComponents>
         <i class="fas fa-fw fa-cog"></i>
         <span>Components</span>
       </a>
@@ -47,11 +47,11 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" (click)="isCollapsedUtilities = !isCollapsedUtilities" [attr.aria-expanded]="!isCollapsedUtilities" aria-controls="collapseUtilities">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="!isCollapsedUtilities" aria-controls="collapseUtilities" (click)="isCollapsedUtilities = !isCollapsedUtilities" [attr.aria-expanded]="!isCollapsedUtilities">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Utilities</span>
       </a>
-      <div id="collapseUtilities" class="collapse" [ngbCollapse]="isCollapsedUtilities">
+      <div id="collapseUtilities" class="collapse" [ngbCollapse]="isCollapsedUtilities" #collapseUtilities>
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Custom Utilities:</h6>
           <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -72,7 +72,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" (click)="isCollapsedPages = !isCollapsedPages" [attr.aria-expanded]="!isCollapsedPages" aria-controls="collapsePages">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="!isCollapsedPages" aria-controls="collapsePages" (click)="isCollapsedPages = !isCollapsedPages" [attr.aria-expanded]="!isCollapsedPages">
         <i class="fas fa-fw fa-folder"></i>
         <span>Pages</span>
       </a>
