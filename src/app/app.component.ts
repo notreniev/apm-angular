@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,15 @@ import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnInit }
 })
 export class AppComponent implements AfterViewInit, OnInit{
   title = 'frontend';
-  @ViewChild('collapseUtilities', { static: false }) utilities: ElementRef
-  @ViewChild('collapsePages', { static: false }) pages: ElementRef
-  @ViewChild("collapseComponents", { static: false }) componentes: ElementRef;
+
+  @ViewChild('components') 
+   private components: ElementRef;
+
+   @ViewChild('utilities') 
+   private utilities: ElementRef;
+
+   @ViewChild('pages') 
+   private pages: ElementRef;
 
   public isCollapsedComponents = true;
   public isCollapsedUtilities = true;
@@ -17,11 +23,29 @@ export class AppComponent implements AfterViewInit, OnInit{
   public isCollapsedCharts = true;
   public isMenuCollapsed = true;
 
-
-  constructor(){
+  constructor(private renderer: Renderer2){
   }
 
   ngAfterViewInit(){
+    this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
+      this.renderer.removeClass(this.components.nativeElement, 'show')
+      this.renderer.removeClass(this.utilities.nativeElement, 'show')
+      this.renderer.removeClass(this.pages.nativeElement, 'show')
+      this.renderer.addClass(this.components.nativeElement, 'show')
+    });
+
+    this.renderer.listen(this.utilities.nativeElement.parentNode, 'click', () => {
+      this.renderer.removeClass(this.components.nativeElement, 'show')
+      this.renderer.removeClass(this.utilities.nativeElement, 'show')
+      this.renderer.removeClass(this.pages.nativeElement, 'show')
+      this.renderer.addClass(this.utilities.nativeElement, 'show')
+    });
+
+    this.renderer.listen(this.pages.nativeElement.parentNode, 'click', () => {
+      this.renderer.removeClass(this.components.nativeElement, 'show')
+      this.renderer.removeClass(this.utilities.nativeElement, 'show')
+      this.renderer.addClass(this.pages.nativeElement, 'show')
+    });
 
   }
 
