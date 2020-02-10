@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContentWrapperComponent implements OnInit {
 
-  titulo: string = 'teste2'
+  titulo: string = 'teste card'
 
   constructor() { }
 
