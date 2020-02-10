@@ -13,7 +13,8 @@ import { CursoComponent } from './curso/lista/curso.component';
 import { HomeComponent } from './home/home.component';
 import { InstituicaoEdicaoComponent } from './instituicao/edicao/instituicao-edicao.component';
 import { InstituicaoComponent } from './instituicao/lista/instituicao.component';
-import { SearchPipe } from './pipes/search.pipe';
+import { SearchPipe } from 'src/shared/pipes/search.pipe';
+import { SidebarBrandComponent } from 'src/shared/components/sidebar-brand/sidebar-brand.component';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -27,7 +28,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     AlunoEdicaoComponent,
     CursoEdicaoComponent,
     InstituicaoEdicaoComponent,
-    SearchPipe
+    SearchPipe,
+    SidebarBrandComponent
   ],
   imports: [
     BrowserModule,
