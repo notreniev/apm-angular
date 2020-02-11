@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Card } from 'src/shared/models/card.model';
 
 @Component({
   selector: 'apm-card',
@@ -7,10 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input('titulo') titulo: string = 'teste'
-
-  // @Input('title') title: string = ''
-  // @Input('subtitle') subtitle: string = ''
+  @Input('card') card: Card
 
   constructor() { }
 
