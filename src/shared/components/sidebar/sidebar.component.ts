@@ -23,7 +23,7 @@ export class SidebarComponent implements AfterViewInit, OnInit {
   public isCollapsedUtilities = true;
   public isCollapsedPages = true;
   public isCollapsedCharts = true;
-  public isMenuCollapsed = true;
+  public isMenuCollapsed = false;
 
   constructor(private renderer: Renderer2) { }
 

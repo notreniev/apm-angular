@@ -1,0 +1,5 @@
+<h4 class="small font-weight-bold">{{card.name}} <span class="float-right">{{card.percentage}}%</span></h4>
+<div class="progress mb-4">
+  <div class="progress-bar bg-{{card.type}}" role="progressbar" [style.width.%]="card.percentage"
+    [attr.aria-valuenow]="card.percentage" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
