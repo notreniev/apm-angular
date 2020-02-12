@@ -5,18 +5,34 @@
   <apm-sidebar></apm-sidebar>
   <!-- End of Sidebar -->
 
-  <!-- Content Wrapper -->
-  <apm-content-wrapper></apm-content-wrapper>
-  <!-- End of Content Wrapper -->
+  <div id="content-wrapper">
 
-</div>
-<!-- End of Page Wrapper -->
+    <!-- Main Content -->
+    <div id="content">
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-  Up
-</a>
+      <!-- Topbar -->
+      <apm-topbar></apm-topbar>
+      <!-- End of Topbar -->
 
-<!-- Logout Modal-->
-<apm-logout-modal></apm-logout-modal>
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- End of Page Content /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; PROCERGS 2020<br><br> APM - Angular - NodeJS</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </div>
+
+  <!-- Logout Modal-->
+  <apm-logout-modal></apm-logout-modal>

@@ -4,13 +4,14 @@ import { AlunoEdicaoComponent } from './aluno/edicao/aluno-edicao.component';
 import { AlunoComponent } from './aluno/lista/aluno.component';
 import { CursoEdicaoComponent } from './curso/edicao/curso-edicao.component';
 import { CursoComponent } from './curso/lista/curso.component';
-import { HomeComponent } from './home/home.component';
 import { InstituicaoEdicaoComponent } from './instituicao/edicao/instituicao-edicao.component';
 import { InstituicaoComponent } from './instituicao/lista/instituicao.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: DashboardComponent },
+  { path: 'home', component: DashboardComponent },
   { path: 'aluno', component: AlunoComponent },
   { path: 'aluno/:id', component: AlunoEdicaoComponent },
   { path: 'aluno/add', component: AlunoEdicaoComponent },
@@ -27,6 +28,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
   routes
 }

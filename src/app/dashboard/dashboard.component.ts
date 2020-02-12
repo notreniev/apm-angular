@@ -1,13 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/shared/models/card.model';
 import colors from 'src/shared/enums/color-system';
 
 @Component({
-  selector: 'apm-content-wrapper',
-  templateUrl: './content-wrapper.component.html',
-  styleUrls: ['./content-wrapper.component.css']
+  selector: 'apm-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ContentWrapperComponent implements OnInit {
+export class DashboardComponent implements OnInit {
+
+  pageTitle: string
 
   // Header
   cardRendimentosMensal: Card
@@ -71,5 +73,4 @@ export class ContentWrapperComponent implements OnInit {
     ]
 
   }
-
 }

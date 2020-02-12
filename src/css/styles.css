@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 
 .jumbotron {
   margin-top: 1%;
@@ -119,11 +123,6 @@ label {
 }
 
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
 
 
 @media (min-width: 768px) {
