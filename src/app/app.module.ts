@@ -22,6 +22,7 @@ import { CardContentComponent } from 'src/shared/components/card-content/card-co
 import { CardProgressBarComponent } from 'src/shared/components/card-progress-bar/card-progress-bar.component';
 import { CardBadgeComponent } from 'src/shared/components/card-badge/card-badge.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from 'src/shared/components/footer/footer.component';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -43,7 +44,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     CardContentComponent,
     CardProgressBarComponent,
     CardBadgeComponent,
-    DashboardComponent
+    DashboardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

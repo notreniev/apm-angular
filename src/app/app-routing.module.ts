@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'aluno', component: AlunoComponent },
   { path: 'aluno/:id', component: AlunoEdicaoComponent },

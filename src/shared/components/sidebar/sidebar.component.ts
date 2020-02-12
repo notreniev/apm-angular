@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'apm-sidebar',
@@ -25,7 +26,7 @@ export class SidebarComponent implements AfterViewInit, OnInit {
   public isCollapsedCharts = true;
   public isMenuCollapsed = false;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
 
   ngAfterViewInit() {
     this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
