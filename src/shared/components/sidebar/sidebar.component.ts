@@ -33,6 +33,7 @@ export class SidebarComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit() {
+
     this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
       this.isCollapsedComponents = false
       this.isCollapsedUtilities = true
@@ -50,36 +51,33 @@ export class SidebarComponent implements AfterViewInit, OnInit {
       this.isCollapsedUtilities = true
       this.isCollapsedPages = false
     })
-
   }
 
   /**
    * 
-   *     // const navItems = this.elRef.nativeElement.querySelectorAll('li')
-      // navItems.forEach(element => {
-      //   const div = element.querySelector('div')
-      //   if (div){
-      //     const show = div.classList.contains('collapse')
-      //     if (show){
-      //       console.log(div)
-      //       this.renderer.listen(this.components.nativeElement, 'click', () => {
-      //         this.renderer.removeClass(this.utilities.nativeElement, 'show')
-      //         this.renderer.removeClass(this.pages.nativeElement, 'show')      
-      //         this.renderer.addClass(this.components.nativeElement, 'show')
-      //         console.log('this1', div)
-      //       })    
-      //     }
-      //   }
-      // });
+   *     
+      const navItems = this.elRef.nativeElement.querySelectorAll('li')
+      navItems.forEach(element => {
+        const div = element.querySelector('div')
+        if (div){
+          const show = div.classList.contains('collapse')
+          if (show){
+            console.log(div)
+            this.renderer.listen(this.components.nativeElement, 'click', () => {
+              this.renderer.removeClass(this.utilities.nativeElement, 'show')
+              this.renderer.removeClass(this.pages.nativeElement, 'show')      
+              this.renderer.addClass(this.components.nativeElement, 'show')
+              console.log('this1', div)
+            })    
+          }
+        }
+      });
   
    * 
    * 
    */
 
   ngOnInit(): void {
-    console.log('this.isCollapsedComponents', this.isCollapsedComponents)
-    console.log('this.isCollapsedUtilities', this.isCollapsedUtilities)
-    console.log('this.isCollapsedPages', this.isCollapsedPages)
   }
 
 }
