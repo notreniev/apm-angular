@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements AfterViewInit, OnInit {
 
+  active
+
   @ViewChild('components')
   private components: ElementRef;
 
@@ -23,32 +25,32 @@ export class SidebarComponent implements AfterViewInit, OnInit {
   public isCollapsedComponents = true;
   public isCollapsedUtilities = true;
   public isCollapsedPages = true;
-  public isCollapsedCharts = true;
+
   public isMenuCollapsed = false;
 
-  constructor(private renderer: Renderer2, private router: Router) { }
+  constructor(private renderer: Renderer2, private router: Router) {
+
+  }
 
   ngAfterViewInit() {
     this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
-      this.renderer.removeClass(this.components.nativeElement, 'show')
-      this.renderer.removeClass(this.utilities.nativeElement, 'show')
-      this.renderer.removeClass(this.pages.nativeElement, 'show')
-      this.renderer.addClass(this.components.nativeElement, 'show')
-    });
+      this.isCollapsedComponents = false
+      this.isCollapsedUtilities = true
+      this.isCollapsedPages = true
+    })
 
     this.renderer.listen(this.utilities.nativeElement.parentNode, 'click', () => {
-      this.renderer.removeClass(this.components.nativeElement, 'show')
-      this.renderer.removeClass(this.utilities.nativeElement, 'show')
-      this.renderer.removeClass(this.pages.nativeElement, 'show')
-      this.renderer.addClass(this.utilities.nativeElement, 'show')
-    });
+      this.isCollapsedComponents = true
+      this.isCollapsedUtilities = false
+      this.isCollapsedPages = true
+    })
 
     this.renderer.listen(this.pages.nativeElement.parentNode, 'click', () => {
-      this.renderer.removeClass(this.components.nativeElement, 'show')
-      this.renderer.removeClass(this.utilities.nativeElement, 'show')
-      this.renderer.removeClass(this.pages.nativeElement, 'show')
-      this.renderer.addClass(this.pages.nativeElement, 'show')
-    });
+      this.isCollapsedComponents = true
+      this.isCollapsedUtilities = true
+      this.isCollapsedPages = false
+    })
+
   }
 
   /**
@@ -75,6 +77,9 @@ export class SidebarComponent implements AfterViewInit, OnInit {
    */
 
   ngOnInit(): void {
+    console.log('this.isCollapsedComponents', this.isCollapsedComponents)
+    console.log('this.isCollapsedUtilities', this.isCollapsedUtilities)
+    console.log('this.isCollapsedPages', this.isCollapsedPages)
   }
 
 }

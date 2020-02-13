@@ -79,18 +79,12 @@
             <!-- Color System -->
             <div class="row">
               <div class="col-lg-6 mb-4" *ngFor="let color of colors">
-                <div class="card bg-{{color.name}} text-white shadow">
-                  <div class="card-body">
-                    {{color.name}}
-                    <div class="text-white-50 small">{{color.hexa}}</div>
-                  </div>
-                </div>
+                <apm-card-badge [color]="color"></apm-card-badge>
               </div>
             </div>
-          </div>
 
-          <!-- Approach -->
-          <!-- <div class="card shadow mb-4">
+            <!-- Approach -->
+            <!-- <div class="card shadow mb-4">
             <div class="card-body" style="display: inline-block;">
               <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor
                 page performance. Custom CSS classes are used to create custom components and
@@ -99,6 +93,6 @@
                 especially the utility classes.</p>
             </div>
           </div> -->
+          </div>
         </div>
-      </div>
-      <!-- div row -->
+        <!-- div row -->

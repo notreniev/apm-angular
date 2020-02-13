@@ -42,18 +42,32 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
+    Accordion
+  </div>
+
+  <li class="nav-item ">
+    <a class="nav-link" href="#">
+      <i class="fas fa-fw fa-list"></i>
+      <span>Exemplos</span>
+    </a>
+  </li>
+
+
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
     Interface
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" (click)="isCollapsedComponents = !isCollapsedComponents"
-      [attr.aria-expanded]="!isCollapsedComponents">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+      aria-controls="collapseTwo" (click)="isCollapsedComponents = !isCollapsedComponents">
       <i class="fas fa-fw fa-cog"></i>
       <span>Components</span>
     </a>
-    <div id="components" class="collapse" aria-labelledby="headingTwo" [ngbCollapse]="isCollapsedComponents"
-      #components>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" #components
+      [ngbCollapse]="isCollapsedComponents">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Custom Components:</h6>
         <a class="collapse-item" href="buttons.html">Buttons</a>
@@ -64,13 +78,13 @@
 
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-      aria-expanded="!isCollapsedUtilities" aria-controls="collapseUtilities"
-      (click)="isCollapsedUtilities = !isCollapsedUtilities" [attr.aria-expanded]="!isCollapsedUtilities">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
+      aria-controls="collapseUtilities" (click)="isCollapsedUtilities = !isCollapsedUtilities">
       <i class="fas fa-fw fa-wrench"></i>
       <span>Utilities</span>
     </a>
-    <div id="utilities" class="collapse" [ngbCollapse]="isCollapsedUtilities" #utilities>
+    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar"
+      #utilities [ngbCollapse]="isCollapsedUtilities">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Custom Utilities:</h6>
         <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -91,13 +105,13 @@
 
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-      aria-expanded="!isCollapsedPages" aria-controls="collapsePages" (click)="isCollapsedPages = !isCollapsedPages"
-      [attr.aria-expanded]="!isCollapsedPages">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+      aria-controls="collapsePages" (click)="isCollapsedPages = !isCollapsedPages">
       <i class="fas fa-fw fa-folder"></i>
       <span>Pages</span>
     </a>
-    <div id="pages" class="collapse" [ngbCollapse]="isCollapsedPages" #pages>
+    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" #pages
+      [ngbCollapse]="isCollapsedPages">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Login Screens:</h6>
         <a class="collapse-item" href="login.html">Login</a>

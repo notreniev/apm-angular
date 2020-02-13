@@ -218,4 +218,10 @@ label {
   .sidebar:not(.show) .sidebar-heading {
     text-align: center;
   }
+
+  .sidebar:not(.show) #sidebarToggle::after {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    margin-left: .25rem;
+  }
 }
