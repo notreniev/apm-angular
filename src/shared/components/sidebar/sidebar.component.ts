@@ -35,7 +35,7 @@ export class SidebarComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
 
     this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
-      this.isCollapsedComponents = false
+      this.isCollapsedComponents = this.isCollapsedComponents ? true : false
       this.isCollapsedUtilities = true
       this.isCollapsedPages = true
     })
