@@ -1,6 +1,6 @@
-# APM - Frontend
+# APM - Angular
 
-Este projeto foi desenvolvimento em Angular 8 e serve de frontend para a aplicação SIGIE de Gerenciamento de Instituições de Ensino
+Este projeto foi desenvolvimento em Angular 9 e serve de frontend para a aplicação APM de Gerenciamento de Instituições de Ensino
 
 Para rodar esta aplicação rodar o comando:
 
@@ -14,7 +14,6 @@ Acessar o endereço `http://localhost:4201/` no seu navegador.
 
 ## Atenção!
 
-Esta aplicação depende do backend SIGIE-BACKEND disponível nesta URL:
+Esta aplicação depende do backend APM-BACKEND disponível nesta URL:
 
 https://github.com/notreniev/apm-backend
-
