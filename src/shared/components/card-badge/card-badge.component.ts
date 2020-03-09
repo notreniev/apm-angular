@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'apm-card-badge',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardBadgeComponent implements OnInit {
 
-  @Input() color: any
+  @Input() color: any;
 
   constructor() { }
 
