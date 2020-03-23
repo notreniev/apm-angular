@@ -28,7 +28,6 @@ export class RenderDirective implements OnInit {
     } else {
       this.renderer.removeClass(elementRoot, this.classe);
     }
-    console.log(this.id);
   }
 
   ngOnInit() {}
