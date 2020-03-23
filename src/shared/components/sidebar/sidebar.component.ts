@@ -1,26 +1,29 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild
+} from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'apm-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: "apm-sidebar",
+  templateUrl: "./sidebar.component.html",
+  styleUrls: ["./sidebar.component.css"]
 })
 export class SidebarComponent implements AfterViewInit, OnInit {
+  active;
 
-  active
-
-  @ViewChild('components')
+  @ViewChild("components")
   private components: ElementRef;
 
-  @ViewChild('utilities')
+  @ViewChild("utilities")
   private utilities: ElementRef;
 
-  @ViewChild('pages')
+  @ViewChild("pages")
   private pages: ElementRef;
-
-  @ViewChild('accordionSidebar')
-  private navItem: ElementRef;
 
   public isCollapsedComponents = true;
   public isCollapsedUtilities = true;
@@ -28,29 +31,32 @@ export class SidebarComponent implements AfterViewInit, OnInit {
 
   public isMenuCollapsed = false;
 
-  constructor(private renderer: Renderer2, private router: Router) {
-
-  }
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   ngAfterViewInit() {
-
-    this.renderer.listen(this.components.nativeElement.parentNode, 'click', () => {
-      this.isCollapsedComponents = this.isCollapsedComponents ? true : false
-      this.isCollapsedUtilities = true
-      this.isCollapsedPages = true
-    })
-
-    this.renderer.listen(this.utilities.nativeElement.parentNode, 'click', () => {
-      this.isCollapsedComponents = true
-      this.isCollapsedUtilities = false
-      this.isCollapsedPages = true
-    })
-
-    this.renderer.listen(this.pages.nativeElement.parentNode, 'click', () => {
-      this.isCollapsedComponents = true
-      this.isCollapsedUtilities = true
-      this.isCollapsedPages = false
-    })
+    // this.renderer.listen(
+    //   this.components.nativeElement.parentNode,
+    //   "click",
+    //   () => {
+    //     this.isCollapsedComponents = this.isCollapsedComponents ? true : false;
+    //     this.isCollapsedUtilities = true;
+    //     this.isCollapsedPages = true;
+    //   }
+    // );
+    // this.renderer.listen(
+    //   this.utilities.nativeElement.parentNode,
+    //   "click",
+    //   () => {
+    //     this.isCollapsedComponents = true;
+    //     this.isCollapsedUtilities = false;
+    //     this.isCollapsedPages = true;
+    //   }
+    // );
+    // this.renderer.listen(this.pages.nativeElement.parentNode, "click", () => {
+    //   this.isCollapsedComponents = true;
+    //   this.isCollapsedUtilities = true;
+    //   this.isCollapsedPages = false;
+    // });
   }
 
   /**
@@ -77,7 +83,5 @@ export class SidebarComponent implements AfterViewInit, OnInit {
    * 
    */
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

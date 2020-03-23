@@ -1,27 +1,35 @@
-import { Directive, OnInit, Renderer2, ElementRef, HostListener } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  Renderer2
+} from "@angular/core";
 
 @Directive({
-  selector: '[apmRender]'
+  selector: "[apmRender]"
 })
 export class RenderDirective implements OnInit {
-
-  classe: string = 'show'
+  classe: string = "show";
   toggleFlag = false;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
+  @Input() id: string;
 
-  @HostListener('click')
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  @HostListener("click")
   performTask() {
-    this.toggleFlag = (this.toggleFlag === true) ? false : true;
+    this.toggleFlag = this.toggleFlag === true ? false : true;
 
-    console.log('this.toggleFlag', this.toggleFlag)
+    const elementRoot = this.renderer.selectRootElement(`${this.id}`, true);
     if (this.toggleFlag) {
-      this.renderer.addClass(this.el.nativeElement, this.classe);
+      this.renderer.addClass(elementRoot, this.classe);
     } else {
-      this.renderer.removeClass(this.el.nativeElement, this.classe);
+      this.renderer.removeClass(elementRoot, this.classe);
     }
+    console.log(this.id);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

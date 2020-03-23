@@ -40,19 +40,6 @@ a:hover {
   color: blue !important;
 }
 
-/* visited link */
-a.nav-link:visited {
-  color: white !important;
-}
-
-a.nav-link:active {
-  color: white !important;
-}
-
-a.nav-link:link {
-  color: white !important;
-}
-
 /* mouse over link */
 a.nav-link:hover {
   color: greenyellow !important;
@@ -221,9 +208,4 @@ label {
     font-family: "Font Awesome 5 Free";
     margin-left: 0.25rem;
   }
-}
-
-.fa-bell:before {
-  content: "\f0f3";
-  border: solid 1px #1b1b32;
 }
