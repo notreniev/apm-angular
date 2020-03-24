@@ -8,13 +8,13 @@ import {
 } from "@angular/core";
 
 @Directive({
-  selector: "[apmRender]"
+  selector: "[apmToggleMenu]"
 })
 export class RenderDirective implements OnInit {
   classe: string = "show";
   toggleFlag = false;
 
-  @Input() id: string;
+  @Input("apmToggleMenu") elementId: string;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -22,7 +22,10 @@ export class RenderDirective implements OnInit {
   performTask() {
     this.toggleFlag = this.toggleFlag === true ? false : true;
 
-    const elementRoot = this.renderer.selectRootElement(`${this.id}`, true);
+    const elementRoot = this.renderer.selectRootElement(
+      `#${this.elementId}`,
+      true
+    );
     if (this.toggleFlag) {
       this.renderer.addClass(elementRoot, this.classe);
     } else {
