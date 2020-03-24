@@ -2,6 +2,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { IConfig, NgxMaskModule } from "ngx-mask";
 import { CardBadgeComponent } from "src/shared/components/card-badge/card-badge.component";
@@ -56,7 +57,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     FormsModule,
     NgbModule,
     NgxMaskModule.forRoot(options),
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
