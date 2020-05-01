@@ -28,7 +28,7 @@
     "mime": "^1.6.0",
     "minimatch": "^3.0.4",
     "ngx-mask": "^8.1.6",
-    "qs": "^1.2.2",
+    "qs": "^6.0.4",
     "rxjs": "^6.5.4",
     "serialize-javascript": "^2.1.1",
     "tar": "^2.2.2",
